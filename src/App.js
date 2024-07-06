@@ -1,13 +1,16 @@
 //imports
 import './App.css';
 import { Button } from './components/Button';
-import { Job } from './components/Job';
+import  Job  from './components/Job';
 import { Tag } from './components/Tag';
 import { Logo } from './components/Logo';
-import { useEffect } from 'react';
+import { useEffect,useState } from 'react';
 
 //App component
 function App() {
+
+//State to store data
+const [data,setData]=useState([]);
 
 //Getting json data
 const getData=()=>{
@@ -23,7 +26,13 @@ const getData=()=>{
     console.log(response)
     return response.json()
   })
+  .then(function(myJson) {
+    console.log(myJson);
+    setData(myJson)
+  });
 }
+
+//fetching data on each render
 useEffect(()=>{
   getData()
 },[])
@@ -35,6 +44,11 @@ useEffect(()=>{
           <div className=' rounded-sm h-[4em] w-full flex flex-row justify-between items-center px-4 bg-[color:hsl(180,31%,95%)]'>
             <div></div>
             <p className='underline text-[color:hsl(180,29%,50%)] '>Clear</p>
+          </div>
+          <div>
+            {
+              data.map((item)=><Job key={item.id} jobItem={item}></Job>)
+            }
           </div>
       </div>
     </div>
