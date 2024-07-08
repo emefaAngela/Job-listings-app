@@ -10,8 +10,8 @@ const Job = ({jobItem,handleFilterClick}) => {
   return ( 
     <div className={tw(
       'w-full h-8em',
-      'rounded-sm p-4 flex flex-col my-16 sm:my-4',
-      'bg-[color:hsl(180,31%,95%)]',
+      'rounded-md p-4 flex flex-col my-16 sm:my-4',
+      'bg-[white]',
       '  sm:flex-row sm:justify-between sm:space-x-4'
       )}>
       <div className={tw(
@@ -73,11 +73,17 @@ const Job = ({jobItem,handleFilterClick}) => {
         )}>
         <Tag
          onClick={()=>handleFilterClick(jobItem.role)}
+         className={tw(
+          'cursor-pointer hover:bg-[color:hsl(180,29%,50%)]'
+         )}
          >
           {jobItem.role}
          </Tag>
         <Tag 
         onClick={()=>handleFilterClick(jobItem.level)}
+        className={tw(
+          'cursor-pointer hover:bg-[color:hsl(180,29%,50%)]'
+         )}
         >
           {jobItem.level}
         </Tag>
@@ -87,6 +93,9 @@ const Job = ({jobItem,handleFilterClick}) => {
           {jobItem.languages.map((language) => 
           <Tag 
           onClick={()=>handleFilterClick(language)}
+          className={tw(
+            'cursor-pointer hover:bg-[color:hsl(180,29%,50%)]'
+           )}
           >
             {language}
           </Tag>)}

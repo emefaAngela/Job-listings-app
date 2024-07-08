@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { tw } from './utils/tailwind';
 import ActiveFilter from './components/ActiveTag';
 
+
 //App component
 function App() {
   // States
@@ -72,9 +73,9 @@ function App() {
 
   return (
     <div className={tw(
-      'w-full h-100vh',
-      ' absolute' ,
-      'bg-[color:hsl(180,29%,50%)]'
+      'w-full h-full overflow-y-auto',
+      ' absolute ' ,
+      'bg-[hsl(180,52%,96%)]'
       )}>
       <div className={tw(
         'w-full h-[8em]',
@@ -84,15 +85,15 @@ function App() {
       </div>
       <div className={tw(
         'absolute flex top-0 flex-col',
-        'w-10/12 my-24 mx-8 sm:mx-32',
+        'w-10/12  my-24 mx-8 sm:mx-32',
         'justify-center items-center',
         ''
         )}>
         <div className={tw(
-          'rounded-sm h-[4em] w-full',
+          'rounded-md h-[4em] w-full',
           'flex flex-row justify-between items-center',
           'px-4',
-          'bg-[color:hsl(180,31%,95%)]'
+          'bg-[white]'
           )}>
           <div className='flex flex-row space-x-4'>
             {activeFilters.map((filter)=>

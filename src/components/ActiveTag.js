@@ -15,7 +15,7 @@ const ActiveFilter = ({filter,handleFilterClick}) => {
       </Tag>
       <div className={tw(
         'font-semibold',
-        'hover:bg-black bg-[color:hsl(180,29%,50%)] text-white',
+        'hover:bg-[black] bg-[color:hsl(180,29%,50%)] text-white',
         'text-center  text-[#ffff] h-8',
         'cursor-pointer pt-0.5 px-3'
       )}
