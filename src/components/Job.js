@@ -4,28 +4,31 @@ import { Tag } from "./Tag"
 import { Logo } from "./Logo"
 import { tw } from "../utils/tailwind"
 
+
 //Job component
 const Job = ({jobItem,handleFilterClick}) => {
   return ( 
     <div className={tw(
       'w-full h-8em',
-      'rounded-sm p-4 flex flex-col my-4',
+      'rounded-sm p-4 flex flex-col my-16 sm:my-4',
       'bg-[color:hsl(180,31%,95%)]',
-      'sm:flex-row sm:justify-between sm:space-x-4'
+      '  sm:flex-row sm:justify-between sm:space-x-4'
       )}>
       <div className={tw(
         'flex flex-col sm:flex-row',
-        'sm:space-x-4'
+        'sm:space-x-4 space-y-4'
         )}>
-      <Logo 
+      <Logo className={tw(
+        '-mt-16 sm:mt-4'
+      )}
       src={process.env.PUBLIC_URL + jobItem.logo}
       />
       <div className={tw(
         'flex flex-col',
-        'space-y-2'
+        'space-y-4'
         )}>
       <div className={tw(
-        'flex flex-col sm:flex-row sm:justify-between',
+        'flex flex-col   sm:flex-row ',
         ' sm:space-x-6 '
         )}> 
         <div className={tw(
@@ -52,8 +55,10 @@ const Job = ({jobItem,handleFilterClick}) => {
         )}>
           {jobItem.position}
         </div>
-      <div className={tw("flex space-x-2  font-medium")}>
-        <div>{jobItem.postedAt}</div>
+      <div className={tw("flex space-x-2 text-[hsl(180,8%,52%)]  font-medium")}>
+        <div className={tw(
+          'text-[color:hsl(180, 52%, 96%)]'
+        )}>{jobItem.postedAt}</div>
         <div className="">.</div>
         <div>{jobItem.contract}</div>
         <div>.</div>
@@ -62,7 +67,7 @@ const Job = ({jobItem,handleFilterClick}) => {
       </div>
       </div>
       <div className={tw(
-        'space-x-2',
+        'space-x-2 -ml-4 sm:-ml-0',
         'text-[color:hsl(180,29%,50%)]',
         'font-semibold'
         )}>

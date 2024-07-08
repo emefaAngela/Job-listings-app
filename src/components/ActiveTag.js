@@ -1,15 +1,30 @@
-import styled  from 'styled-components'
+//imports
+import { tw } from "../utils/tailwind"
+import { Tag } from "./Tag";
 
-//Button component
-export const ActiveTag = styled.button`
-  background: hsl(180,31%,95%);
-  border-radius: 3px;
-  color: hsl(180,29%,50%);
-  margin: 0.5em 0em;
-  padding: 0.25em 1em;
+//ActiveFilter component
+const ActiveFilter = ({filter,handleFilterClick}) => {
+  return ( 
+    <div className={tw(
+      'flex flex-row items-center ',
+      'rounded-sm border-none',
+      ''
+    )}>
+      <Tag>
+        {filter}
+      </Tag>
+      <div className={tw(
+        'font-semibold',
+        'hover:bg-black bg-[color:hsl(180,29%,50%)] text-white',
+        'text-center  text-[#ffff] h-8',
+        'cursor-pointer pt-0.5 px-3'
+      )}
+      onClick={()=>{handleFilterClick(filter)}}
+      >
+        x
+      </div>
+    </div>
+   );
+}
  
-  &:hover {
-  color:white;
-  }  
-
-`
+export default ActiveFilter;

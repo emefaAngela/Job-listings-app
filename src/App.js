@@ -1,9 +1,9 @@
 // App Component
 import './App.css';
 import Job from './components/Job';
-import { Tag } from './components/Tag';
 import { useEffect, useState } from 'react';
 import { tw } from './utils/tailwind';
+import ActiveFilter from './components/ActiveTag';
 
 //App component
 function App() {
@@ -74,7 +74,7 @@ function App() {
     <div className={tw(
       'w-full h-100vh',
       ' absolute' ,
-      'bg-[color:hsl(180,31%,95%)]'
+      'bg-[color:hsl(180,29%,50%)]'
       )}>
       <div className={tw(
         'w-full h-[8em]',
@@ -85,33 +85,22 @@ function App() {
       <div className={tw(
         'absolute flex top-0 flex-col',
         'w-10/12 my-24 mx-8 sm:mx-32',
-        'justify-center items-center'
+        'justify-center items-center',
+        ''
         )}>
         <div className={tw(
           'rounded-sm h-[4em] w-full',
           'flex flex-row justify-between items-center',
           'px-4',
-          'bg-[white]'
+          'bg-[color:hsl(180,31%,95%)]'
           )}>
-          <div>
+          <div className='flex flex-row space-x-4'>
             {activeFilters.map((filter)=>
-            <div className={tw(
-              'flex flex-row'
-            )}>       
-            <Tag 
-              onClick={()=>{handleFilterClick(filter)}}
-              >
-                {filter}
-            </Tag>
-            <div className={tw(
-              'w-2 h-2',
-              'border-none',
-              'mt-3 mr-6 absolute -mr-34',
-              'text-white'
-              )}>
-                X
-            </div>
-          </div>)}
+            <ActiveFilter 
+            filter={filter}
+            handleFilterClick={handleFilterClick}
+            />
+            )}
           </div>
           <p className={tw(
             'underline text-[color:hsl(180,29%,50%)]',
