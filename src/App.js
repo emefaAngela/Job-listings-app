@@ -78,9 +78,34 @@ function App() {
       'bg-[hsl(180,52%,96%)]'
       )}>
       <div className={tw(
-        'w-full h-[8em]',
-        'bg-[color:hsl(180,29%,50%)]'
+        'w-full   h-[8em]',
+        'bg-[color:hsl(180,29%,40%)]',
+        'flex flex-row space-x-8'
         )}>
+          <div className={tw(
+            'w-48 h-96 rounded-full',
+            'bg-[color:hsl(180,29%,50%)]',
+            'absolute rotate-45 -top-[228px] -left-8'
+          )}>
+          </div>
+          <div className={tw(
+            'w-48 h-96 rounded-full',
+            'bg-[color:hsl(180,29%,50%)]',
+            'relative rotate-45 -top-[305px] left-64'
+          )}>
+          </div>
+          <div className={tw(
+            'w-48 h-96 rounded-full',
+            'bg-[color:hsl(180,29%,50%)]',
+            'absolute rotate-45 -top-[220px]  left-[980px]'
+          )}>
+          </div>
+          <div className={tw(
+            'w-48 h-96 rounded-full',
+            'bg-[color:hsl(180,29%,50%)]',
+            'absolute rotate-45  -top-[196px]  left-[1254px]'
+          )}>
+          </div>
 
       </div>
       <div className={tw(
