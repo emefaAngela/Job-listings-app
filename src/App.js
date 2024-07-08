@@ -106,7 +106,7 @@ function App() {
             'underline text-[color:hsl(180,29%,50%)]',
             'cursor-pointer'
             )} 
-            onClick={() => { window.location.reload() }}
+            onClick={()=>{setActiveFilters([])}}
             >
               Clear
           </p>
