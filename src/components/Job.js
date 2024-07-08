@@ -67,7 +67,7 @@ const Job = ({jobItem,handleFilterClick}) => {
       </div>
       </div>
       <div className={tw(
-        'space-x-2 -ml-4 sm:-ml-0',
+        'space-x-2  sm:-ml-0',
         'text-[color:hsl(180,29%,50%)]',
         'font-semibold'
         )}>

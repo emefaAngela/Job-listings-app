@@ -74,11 +74,11 @@ function App() {
   return (
     <div className={tw(
       'w-full h-full overflow-y-auto',
-      ' absolute ' ,
+      ' absolute overflow-x-hidden ' ,
       'bg-[hsl(180,52%,96%)]'
       )}>
       <div className={tw(
-        'w-full   h-[8em]',
+        'w-full    h-[8em]',
         'bg-[color:hsl(180,29%,40%)]',
         'flex flex-row space-x-8'
         )}>
@@ -95,15 +95,15 @@ function App() {
           )}>
           </div>
           <div className={tw(
-            'w-48 h-96 rounded-full',
-            'bg-[color:hsl(180,29%,50%)]',
-            'absolute rotate-45 -top-[220px]  left-[980px]'
+            'sm:w-48 sm:h-96 sm:rounded-full',
+            'sm:bg-[color:hsl(180,29%,50%)]',
+            'sm:absolute sm:rotate-45 sm:-top-[220px]  sm:left-[980px]'
           )}>
           </div>
           <div className={tw(
-            'w-48 h-96 rounded-full',
-            'bg-[color:hsl(180,29%,50%)]',
-            'absolute rotate-45  -top-[196px]  left-[1254px]'
+            'sm:w-48 sm:h-96 sm:rounded-full',
+            'sm:bg-[color:hsl(180,29%,50%)]',
+            'sm:absolute sm:rotate-45  sm:-top-[196px]  sm:left-[1254px]'
           )}>
           </div>
 
@@ -120,7 +120,7 @@ function App() {
           'px-4',
           'bg-[white]'
           )}>
-          <div className='flex flex-row space-x-4'>
+          <div className='flex flex-row w-10/12 overflow-ellipsis space-x-4'>
             {activeFilters.map((filter)=>
             <ActiveFilter 
             filter={filter}
