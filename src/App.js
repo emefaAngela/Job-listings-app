@@ -1,16 +1,15 @@
 // App Component
 import './App.css';
-import { Button } from './components/Button';
 import Job from './components/Job';
 import { Tag } from './components/Tag';
-import { Logo } from './components/Logo';
 import { useEffect, useState } from 'react';
+import { tw } from './utils/tailwind';
 
+//App component
 function App() {
-  // State to store original data and filtered data
+  // States
   const [originalData, setOriginalData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
-  // State to store active filters
   const [activeFilters, setActiveFilters] = useState([]);
 
   // Getting filters
@@ -72,15 +71,67 @@ function App() {
   }, []);
 
   return (
-    <div className="w-full h-100vh relative bg-[color:hsl(180,31%,95%)]">
-      <div className='w-full h-[8em]  bg-[color:hsl(180,29%,50%)]'></div>
-      <div className='absolute flex   w-10/12 top-0 flex-col  my-24 mx-8 sm:mx-32  justify-center items-center'>
-        <div className='rounded-sm h-[4em] w-full flex flex-row justify-between items-center px-4 bg-[color:hsl(180,31%,95%)]'>
-          <div>{activeFilters.map((filter)=><Tag onClick={()=>{handleFilterClick(filter)}}>{filter}</Tag>)}</div>
-          <p className='underline text-[color:hsl(180,29%,50%)] cursor-pointer ' onClick={() => { window.location.reload() }}>Clear</p>
+    <div className={tw(
+      'w-full h-100vh',
+      ' absolute' ,
+      'bg-[color:hsl(180,31%,95%)]'
+      )}>
+      <div className={tw(
+        'w-full h-[8em]',
+        'bg-[color:hsl(180,29%,50%)]'
+        )}>
+
+      </div>
+      <div className={tw(
+        'absolute flex top-0 flex-col',
+        'w-10/12 my-24 mx-8 sm:mx-32',
+        'justify-center items-center'
+        )}>
+        <div className={tw(
+          'rounded-sm h-[4em] w-full',
+          'flex flex-row justify-between items-center',
+          'px-4',
+          'bg-[white]'
+          )}>
+          <div>
+            {activeFilters.map((filter)=>
+            <div className={tw(
+              'flex flex-row'
+            )}>       
+            <Tag 
+              onClick={()=>{handleFilterClick(filter)}}
+              >
+                {filter}
+            </Tag>
+            <div className={tw(
+              'w-2 h-2',
+              'border-none',
+              'mt-3 mr-6 absolute -mr-34',
+              'text-white'
+              )}>
+                X
+            </div>
+          </div>)}
+          </div>
+          <p className={tw(
+            'underline text-[color:hsl(180,29%,50%)]',
+            'cursor-pointer'
+            )} 
+            onClick={() => { window.location.reload() }}
+            >
+              Clear
+          </p>
         </div>
-        <div className='w-full my-8 '>
-          {filteredData.map((item) => <Job key={item.id} handleFilterClick={handleFilterClick} jobItem={item} />)}
+        <div className={tw(
+          'w-full my-8 '
+          )}>
+          {filteredData.map((item) =>
+             <Job 
+             key={item.id} 
+             handleFilterClick={handleFilterClick} 
+             jobItem={item}
+              />
+            )}
         </div>
       </div>
     </div>

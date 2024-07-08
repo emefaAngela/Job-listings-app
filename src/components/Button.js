@@ -1,4 +1,5 @@
-import styled, {css} from 'styled-components'
+//imports
+import styled from 'styled-components'
 
 //Button component
 export const Button = styled.button`

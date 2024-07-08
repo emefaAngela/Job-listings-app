@@ -1,3 +1,4 @@
+//imports
 import styled from 'styled-components'
 
 //Logo component

@@ -1,8 +1,7 @@
-//imports
-import styled from 'styled-components'
+import styled  from 'styled-components'
 
 //Button component
-export const Tag = styled.button`
+export const ActiveTag = styled.button`
   background: hsl(180,31%,95%);
   border-radius: 3px;
   color: hsl(180,29%,50%);
